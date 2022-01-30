@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-p-t-blue: hsl(238, 29%, 16%);
+  --color-p-t-red: hsl(14, 88%, 65%);
+
+  --color-n-t-gray-blue: hsl(237, 12%, 33%);
+  --color-n-t-dark-gray-blue: hsl(240, 6%, 50%);
+
+  --color-gradient-violet: hsl(273, 75%, 66%);
+  --color-gradient-blue: hsl(240, 73%, 65%);
+
+  --color-divider: hsl(240, 5%, 91%);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr 4rem;
+  min-height: 100vh;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  background: linear-gradient(var(--color-gradient-violet), var(--color-gradient-blue));
+  color: var(--color-p-t-blue);
+}
+
+main {
+    margin: 1rem;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 23vw);
+    gap: 1vw;
+    background: white;
+    border-radius: 24px;
+    padding: 3rem 8vw;
+    overflow: hidden;
+    box-shadow: 3px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card__img {
+    display: grid;
+    place-items: center;
+    /* background: no-repeat left bottom url('../images/bg-pattern-desktop.svg'); */
+}
+
+.card__img img {
+    margin-left: -20vw;
+    width: 30vw;
+}
+
+h1 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.card__faq > div {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-divider);
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__header h3 {
+    color: var(--color-n-t-dark-gray-blue);
+    font-weight: 400;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: all 200ms ease;
+}
+
+.card__header h3:hover {
+    color: var(--color-p-t-red);
+}
+
+.card__header img {
+    cursor: pointer;
+    transition: transform 400ms ease-out;
+}
+
+.card__faq > div {
+    position: relative;
+}
+
+.card__faq > div p {
+    padding-top: 0.75rem;
+    color: var(--color-n-t-dark-gray-blue);
+    position: absolute;
+    inset: 2rem 0 0 auto;
+    transform: scale(0);
+    transform-origin: top left;
+    transition: transform 200ms ease-in;
+}
+
+.card__faq > div.active p {
+    position: static;
+    transform: scale(1);
+}
+
+.card__faq > div.active .card__header h3 {
+    font-weight: 700;
+    color: var(--color-p-t-blue);
+}
+
+.card__faq > div.active .card__header img {
+    transform: rotate(180deg);
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+    }
+    h1 {
+        text-align: center;
+    }
+}
