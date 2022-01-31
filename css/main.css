@@ -85,16 +85,17 @@ h1 {
   align-items: center;
 }
 
-.card__header h3 {
+.card__header h2 {
   flex: 1;
   color: var(--color-n-t-dark-gray-blue);
   font-weight: 400;
+  font-size: 1.17em;
   cursor: pointer;
   padding-right: 1rem;
   transition: all 200ms ease;
 }
 
-.card__header h3:hover {
+.card__header h2:hover {
   color: var(--color-p-t-red);
 }
 
@@ -122,7 +123,7 @@ h1 {
   transform: scale(1);
 }
 
-.card__faq > div.active .card__header h3 {
+.card__faq > div.active .card__header h2 {
   font-weight: 700;
   color: var(--color-p-t-blue);
 }
@@ -153,7 +154,7 @@ footer a {
     top: -20px;
     width: 26vw;
   }
-  
+
   .card {
     grid-template-columns: 1fr;
     padding: 0rem 2rem 3rem 2rem;
