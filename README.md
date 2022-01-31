@@ -14,7 +14,7 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 
 ### Links
 
-- Live Site URL: [LIVE SITE - Still work in progress!](https://epikle.github.io/testimonials-grid-section-main/)
+- Live Site URL: [LIVE SITE](https://epikle.github.io/faq-accordion-card-main/)
 
 
 ## My process

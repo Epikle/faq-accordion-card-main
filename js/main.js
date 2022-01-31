@@ -1,6 +1,4 @@
-const openAnswer = document.querySelectorAll(
-  '.card__header h3, .card__header img'
-);
+const openAnswer = document.querySelectorAll('.card__header');
 
 openAnswer.forEach((el) => {
   ['click', 'focus'].forEach((evt) =>

@@ -27,95 +27,108 @@ body {
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
-  background: linear-gradient(var(--color-gradient-violet), var(--color-gradient-blue));
+  background: linear-gradient(
+    var(--color-gradient-violet),
+    var(--color-gradient-blue)
+  );
   color: var(--color-p-t-blue);
 }
 
 main {
-    margin: 1rem;
+  margin: 1rem;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 40%;
+  left: -7vw;
+  width: 14vw;
 }
 
 .card {
-    display: grid;
-    grid-template-columns: repeat(2, 23vw);
-    gap: 1vw;
-    background: white;
-    border-radius: 24px;
-    padding: 3rem 8vw;
-    overflow: hidden;
-    box-shadow: 3px 2px 20px rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: repeat(2, 23vw);
+  gap: 1vw;
+  border-radius: 24px;
+  padding: 4rem 8vw;
+  overflow: hidden;
+  box-shadow: 3px 2px 20px rgba(0, 0, 0, 0.3);
+  background: no-repeat url('../images/bg-pattern-desktop.svg') white;
+  background-position: -34vw center;
+  background-size: 60vw;
 }
 
 .card__img {
-    display: grid;
-    place-items: center;
-    /* background: no-repeat left bottom url('../images/bg-pattern-desktop.svg'); */
+  display: grid;
+  place-items: center;
 }
 
 .card__img img {
-    margin-left: -20vw;
-    width: 30vw;
+  margin-left: -18vw;
+  width: 30vw;
 }
 
 h1 {
-    font-size: 2rem;
-    padding-bottom: 1rem;
+  font-size: 2rem;
+  padding-bottom: 1rem;
 }
 
 .card__faq > div {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--color-divider);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-divider);
 }
 
 .card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card__header h3 {
-    color: var(--color-n-t-dark-gray-blue);
-    font-weight: 400;
-    cursor: pointer;
-    margin-right: 1rem;
-    transition: all 200ms ease;
+  flex: 1;
+  color: var(--color-n-t-dark-gray-blue);
+  font-weight: 400;
+  cursor: pointer;
+  padding-right: 1rem;
+  transition: all 200ms ease;
 }
 
 .card__header h3:hover {
-    color: var(--color-p-t-red);
+  color: var(--color-p-t-red);
 }
 
 .card__header img {
-    cursor: pointer;
-    transition: transform 400ms ease-out;
+  cursor: pointer;
+  transition: transform 400ms ease-out;
 }
 
 .card__faq > div {
-    position: relative;
+  position: relative;
 }
 
 .card__faq > div p {
-    padding-top: 0.75rem;
-    color: var(--color-n-t-dark-gray-blue);
-    position: absolute;
-    inset: 2rem 0 0 auto;
-    transform: scale(0);
-    transform-origin: top left;
-    transition: transform 200ms ease-in;
+  padding-top: 0.75rem;
+  color: var(--color-n-t-dark-gray-blue);
+  position: absolute;
+  inset: 2rem 0 0 auto;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 200ms ease-in;
 }
 
 .card__faq > div.active p {
-    position: static;
-    transform: scale(1);
+  position: static;
+  transform: scale(1);
 }
 
 .card__faq > div.active .card__header h3 {
-    font-weight: 700;
-    color: var(--color-p-t-blue);
+  font-weight: 700;
+  color: var(--color-p-t-blue);
 }
 
 .card__faq > div.active .card__header img {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 footer {
@@ -125,15 +138,39 @@ footer {
 }
 
 footer a {
-  color: hsl(228, 45%, 44%);
+  color: var(--color-divider);
 }
 
 @media (max-width: 768px) {
-    .card {
-        grid-template-columns: 1fr;
-        padding: 3rem 2rem;
-    }
-    h1 {
-        text-align: center;
-    }
+  main {
+    width: 100%;
+    margin-top: 7rem;
+    place-self: start center;
+  }
+
+  .box {
+    left: 15%;
+    top: -20px;
+    width: 26vw;
+  }
+  
+  .card {
+    grid-template-columns: 1fr;
+    padding: 0rem 2rem 3rem 2rem;
+    margin: 1rem;
+    overflow: unset;
+    background-position: 10vw -40vw;
+    background-size: 70vw;
+  }
+
+  .card__img img {
+    margin-top: -7rem;
+    margin-bottom: 3rem;
+    margin-left: 0;
+    width: 16rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
 }
