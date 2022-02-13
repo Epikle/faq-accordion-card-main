@@ -3,9 +3,7 @@ const openAnswer = document.querySelectorAll(
 );
 
 openAnswer.forEach((el) => {
-  ['click', 'focus'].forEach((evt) =>
-    el.addEventListener(evt, (event) => {
-      event.target.parentElement.parentElement.classList.toggle('active');
-    })
-  );
+  el.addEventListener('click', (event) => {
+    event.target.parentElement.parentElement.classList.toggle('active');
+  });
 });
